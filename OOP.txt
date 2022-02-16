@@ -1,0 +1,58 @@
+OOP dörd hissədən ibarətdir:
+Sinif(class)
+Obyekt(object)
+Atributlar(atributes, fields, properties)
+Metodlar(Methods, functions)
+                                           Inheritance ve Polymorphysm haqqinda 
+
+
+İnheritance(miras alma) — bir obyektin xüsusiyyətlərini fərqli obyektlər
+ tərəfindən də istifadə edəbilməsini təmin edən OOP xüsusiyyətidir.
+ Yazılan bir class bir başqa class tərəfindən miras alına bilər.
+ Bu zaman miras alınan class’ın bütün xüsusiyyətləri yeni classa da aid edilir. 
+Burada bir class başqa bir class’dan törəyərək , o class’ın public və protected giriş göstəricilərini təhvil alır.
+ Törəyən(miras alan) class’a “derived class”, miras verən class’a isə “base class” deyilir.
+ Inheritance’ə real həyatdan misal olaraq insan və tələbə arasında əlaqəni nümunə kimi göstərmək olar. 
+Tələbə də insan olduğu üçün insan class’ına aid bütün xüsusiyyətlərə malikdir.
+ Buna görə də kodda təkrarlara yol verməmək üçün inheritance’dən istifadə edilir. 
+EXAMPLE;
+class Fiqur{
+      public void fiqurunEni(int e) {
+         en= e;
+      }
+      public void fiqurunHündürlüyü(int h) {
+         hündürlük = h;
+      }
+      protected int en;
+      protected int hündürlük;
+   }
+
+   // Törəmə class
+   class Dördbucaq: Fiqur{
+      public int sahəniTap() { 
+         return (en * hündürlük); 
+      }
+   }
+   class DördbucaqlınıYoxla {
+      static void Main(string[] args) {
+         Dördbucaq dördbucaqlı= new Dördbucaq();
+
+         dördbucaq.fiqurunEni(5);
+         dördbucaq.fiqurunHündürlüyü(7);
+
+         // Dördbucaqlının sahəsinin tapılması
+         Console.WriteLine("Ümumi sahə: {0}"          dördbucaq.sahəniTap());
+         Console.ReadKey();
+
+
+
+      Polimorphizm — bir obyektin müxtəlif şəkillərdə istifadə edilə biləcəyini göstərən OOP prinsipidir.
+ Deyək ki, bizim “Heyvanlar” adlı bir class’mız və “səs” adlı bir methodumuz var.
+ Bu class ümumi class olduğuna görə burda biz hər heyvanın çıxartdığı səsi ayrı-ayrı verə bimərik.
+public class
+ Heyvanlar{
+   ...
+   public void səs(){
+      Console.WriteLine("Heyvanlar səs çıxarır");   
+   }
+}                            
